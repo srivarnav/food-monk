@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import { Button } from '@material-ui/core';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Icon from '@material-ui/core/Icon';
@@ -33,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ComplexGrid(props) {
     const classes = useStyles();
-    // console.log(props.data);
     const button = (!props.data.count>0)?
         <Button variant="outlined" size="small" onClick={props.added}>Add+</Button>:
         <ButtonGroup size="small" aria-label="small outlined button group">
@@ -48,7 +46,7 @@ export default function ComplexGrid(props) {
                 <Grid container spacing={2}>
                     {/* <Grid item>
                         <ButtonBase className={classes.image}>
-                            <img className={classes.img} alt="complex" src="/static/images/grid/complex.jpg" />
+                            <img className={classes.img} alt="complex" src="../../../assets/image/idli.jpg" />
                         </ButtonBase>
                     </Grid> */}
                     <Grid item xs={12} md container>

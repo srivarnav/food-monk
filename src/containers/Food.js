@@ -57,27 +57,22 @@ class Food extends React.Component {
     }
 
     loginHandleOpen = () => {
-        console.log("login handler");
         this.setState({ showLoginModal: true });
     }
     loginHandleClose = () => {
-        console.log("login handler");
         this.setState({ showLoginModal: false });
     }
 
     checkoutHandleOpen = () => {
-        console.log("login handler");
         this.setState({ showCheckoutModal: true });
     }
     checkoutHandleClose = () => {
-        console.log("login handler");
         this.setState({ showCheckoutModal: false });
     }
 
     render() {
         console.log(this.state)
         const { cuisines } = this.state;
-        console.log(cuisines);
         return (
             <Aux>
                 <Header
@@ -88,8 +83,8 @@ class Food extends React.Component {
                 <Login
                     loginOpen={this.loginHandleOpen}
                     loginClose={this.loginHandleClose}
-                    isAuthenticated={this.state.isAuthenticated}
                     showLoginModal={this.state.showLoginModal} />
+                
                 <Container maxWidth="sm" style={{ marginTop: '100px', marginBottom: '90px'}}>
                     <div>
                         {cuisines.map((foodElement, key) => {

@@ -10,7 +10,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -21,10 +20,10 @@ const useStyles = makeStyles((theme) => ({
     },
     avatar: {
         margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
+        backgroundColor: '#4e004e'
     },
     form: {
-        width: '100%', // Fix IE 11 issue.
+        width: '100%',
         marginTop: theme.spacing(1),
     },
     submit: {
@@ -42,14 +41,9 @@ export default function AlertDialog(props) {
                 aria-labelledby="alert-dialog-title"
                 aria-describedby="alert-dialog-description"
             >
-                {/* <DialogTitle id="alert-dialog-title"></DialogTitle> */}
                 <DialogContent>
-                    {/* <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means sending anonymous location data to
-                        Google, even when no apps are running.
-                </DialogContentText> */}
                     <div className={classes.paper}>
-                        <Avatar className={classes.avatar}>
+                        <Avatar className={classes.avatar} >
                             <LockOutlinedIcon />
                         </Avatar>
                         <Typography component="h1" variant="h5">
@@ -86,10 +80,11 @@ export default function AlertDialog(props) {
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                style={{backgroundColor:'#4e004e', color:'#ffffff'}}
+                                style={{ backgroundColor: '#4e004e', color: '#ffffff' }}
                                 className={classes.submit}
+                                onClick={props.isAuthenticated}
                             >
-                                Sign In
+                                Log In
                             </Button>
                         </form>
                     </div>

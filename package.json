@@ -36,7 +36,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://srivarnav.github.io/food-monk",
+  "homepage": "https://srivarnav.github.io/food-monk",
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }

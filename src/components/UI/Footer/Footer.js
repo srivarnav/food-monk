@@ -3,6 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Aux from '../../../hoc/Aux/Aux';
+import Summary from '../Checkout/Summary/Summary';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -66,20 +67,27 @@ export default function ButtonAppBar(props) {
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
     console.log(props);
-    return (    
+    return (
         <div className={classes.root} >
             <AppBar className={classes.header} position="fixed">
                 <Toolbar>
                     <Grid item xs={2}>
-                        <Button variant="outlined" color="inherit" style={{ color: '#4e004e', float: 'right' }} onClick={handleClickOpen}><span className="material-icons">arrow_drop_up</span></Button>
+                        <Button variant="outlined" color="inherit" style={{ color: '#4e004e', float: 'right' }} onClick={handleClickOpen}>
+                            <span className="material-icons">arrow_drop_up</span>
+                        </Button>
                     </Grid>
                     <Grid item xs={7}>
-                        <Typography variant="h5" className={classes.title} >
-                            Subtotal: &#x20b9; {props.totalPrice}
-                        </Typography>
+                        {(fullScreen) ? <Typography variant="h5" className={classes.title} style={{float:'left', marginLeft:'15px'}}>
+                                            &#x20b9; {props.totalPrice}
+                                        </Typography>
+                                        : <Typography variant="h5" className={classes.title} >
+                                            Subtotal: &#x20b9; {props.totalPrice}
+                                        </Typography>
+                        }
+
                     </Grid>
                     <Grid item xs={3}>
-                        <Button variant="contained" style={{ backgroundColor: '#4e004e', color: '#ffffff', float: 'right' }}>Continue</Button>
+                        <Button variant="contained" style={{ backgroundColor: '#4e004e', color: '#ffffff', float: 'right' }} onClick={props.checkoutOpen}>Continue</Button>
                     </Grid>
                     <Dialog
                         fullScreen={fullScreen}
@@ -87,73 +95,22 @@ export default function ButtonAppBar(props) {
                         onClose={handleClose}
                         aria-labelledby="alert-dialog-title"
                         aria-describedby="alert-dialog-description"
+                        style={{ width: '100%' }}
                     >
-                        <DialogTitle id="alert-dialog-title" style={{textAlign:'center', backgroundColor:'#4e004e', color:'#ffffff'}}>{"SUMMARY CART"}</DialogTitle>
-                        <DialogContent>
+                        <DialogTitle id="responsive-dialog-title"></DialogTitle>
+                        <DialogContent >
                             <DialogContentText id="alert-dialog-description">
-                                <Grid container spacing={3}>
-                                    {
-                                        (props.purchasedItem).map(pItem => {
-                                            return (
-                                                <>
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="h6" style={{ textAlign: 'center' }}>
-                                                            {pItem.title}
-                                                        </Typography>
-                                                    </Grid>
-                                                    <Grid item xs={6}>
-                                                        <Typography variant="h6" style={{ textAlign: 'center' }}>
-                                                            {pItem.count} x &#x20b9; {pItem.price}
-                                                        </Typography>
-                                                    </Grid>
-                                                </>
-                                            )
-                                        })
-                                    }
-                                    <Grid item xs={12}>
-                                        <hr/>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Typography variant="h6" style={{ textAlign: 'center' }}>
-                                            SubTotal
-                                    </Typography>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Typography variant="h6" style={{ textAlign: 'center' }}>
-                                            &#x20b9; {parseFloat(props.totalPrice).toFixed(2)}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Typography variant="subtitle2" style={{ textAlign: 'center' }}>
-                                            Taxes
-                                    </Typography>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Typography variant="subtitle2" style={{ textAlign: 'center' }}>
-                                            +  &#x20b9; {((props.totalPrice)*11/100).toFixed(2)}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <hr/>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Typography variant="h6" style={{ textAlign: 'center', color:'black' }}>
-                                            Grand Total
-                                    </Typography>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Typography variant="h6" style={{ textAlign: 'center', color:'black'}}>
-                                            &#x20b9; {(props.totalPrice + (props.totalPrice)*11/100).toFixed(2)}
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
+                                <Typography component="h1" variant="h4" align="center">
+                                    ------------Cart------------
+                                </Typography>
+                                <Summary purchasedItem={props.purchasedItem} totalPrice={props.totalPrice} />
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClose} color="primary">
+                            <Button onClick={handleClose} style={{ color: '#4e004e' }}>
                                 Cancel
                             </Button>
-                            <Button onClick={handleClose} color="primary" autoFocus>
+                            <Button onClick={handleClose} style={{ color: '#4e004e' }} autoFocus>
                                 continue
                             </Button>
                         </DialogActions>

@@ -8,6 +8,7 @@ import Login from '../components/UI/Login/Login';
 import Container from '@material-ui/core/Container';
 
 import { cuisines } from '../data/cuisines';
+import CheckoutDialog from '../components/UI/Checkout/CheckoutDialog';
 
 class Food extends React.Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class Food extends React.Component {
             totalPrice: 0,
             purchasedItem: [],
             isAuthenticated: false,
-            showLoginModal: false
+            showLoginModal: false,
+            showCheckoutModal: false
         }
     }
 
@@ -56,11 +58,20 @@ class Food extends React.Component {
 
     loginHandleOpen = () => {
         console.log("login handler");
-        this.setState({showLoginModal:true});
+        this.setState({ showLoginModal: true });
     }
     loginHandleClose = () => {
         console.log("login handler");
-        this.setState({showLoginModal:false});
+        this.setState({ showLoginModal: false });
+    }
+
+    checkoutHandleOpen = () => {
+        console.log("login handler");
+        this.setState({ showCheckoutModal: true });
+    }
+    checkoutHandleClose = () => {
+        console.log("login handler");
+        this.setState({ showCheckoutModal: false });
     }
 
     render() {
@@ -79,7 +90,7 @@ class Food extends React.Component {
                     loginClose={this.loginHandleClose}
                     isAuthenticated={this.state.isAuthenticated}
                     showLoginModal={this.state.showLoginModal} />
-                <Container maxWidth="sm" style={{ marginTop: '100px' }}>
+                <Container maxWidth="sm" style={{ marginTop: '100px', marginBottom: '90px'}}>
                     <div>
                         {cuisines.map((foodElement, key) => {
                             return <Card
@@ -94,8 +105,20 @@ class Food extends React.Component {
                     </div>
                 </Container>
                 {(this.state.totalPrice > 0) ?
-                    <Footer purchasedItem={this.state.purchasedItem} totalPrice={this.state.totalPrice} />
+                    <Footer
+                        checkoutOpen={this.checkoutHandleOpen}
+                        checkoutClose={this.checkoutHandleClose}
+                        showCheckoutModal={this.state.showCheckoutModal}
+                        purchasedItem={this.state.purchasedItem}
+                        totalPrice={this.state.totalPrice} />
+
                     : ""}
+                <CheckoutDialog
+                    checkoutOpen={this.checkoutHandleOpen}
+                    checkoutClose={this.checkoutHandleClose}
+                    showCheckoutModal={this.state.showCheckoutModal}
+                    purchasedItem={this.state.purchasedItem}
+                    totalPrice={this.state.totalPrice} />
             </Aux>
         );
     }

@@ -7,7 +7,7 @@ export const cuisines=[
         "type":"veg",
         "category":"breakfast",
         "count":0,
-        "rating":3
+        "rating":2.5
     },
     {
         "title":"Pao Bhaji",

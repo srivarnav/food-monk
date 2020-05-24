@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Food Monk interview task
 ## Functionalities achieved
 
 In project you can

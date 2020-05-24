@@ -7,7 +7,8 @@ export const cuisines=[
         "type":"veg",
         "category":"breakfast",
         "count":0,
-        "rating":2.5
+        "rating":2.5,
+        "keywords":["dhokla","breakfast","veg"]
     },
     {
         "title":"Pao Bhaji",
@@ -17,17 +18,19 @@ export const cuisines=[
         "type":"veg",
         "category":"breakfast",
         "count":0,
-        "rating":2.5
+        "rating":2.5,
+        "keywords":["pao bhaji","pao","breakfast","veg"]
     },
     {
         "title":"Veg Noodles",
-        "description":"",
+        "description":"Enjoy veg noodles served with chopsticks.",
         "price":170,
         "photo":"noodles",
         "type":"veg",
         "category":"chinese",
         "count":0,
-        "rating":3.5
+        "rating":3.5,
+        "keywords":["noodles","veg noodles","chinese","veg"]
     },
     {
         "title":"Manchurian",
@@ -37,7 +40,8 @@ export const cuisines=[
         "type":"veg",
         "category":"chinese",
         "count":0,
-        "rating":2.5
+        "rating":2.5,
+        "keywords":["manchurian","chinese","veg"]
     },
 
     {
@@ -48,7 +52,8 @@ export const cuisines=[
         "type":"nonveg",
         "category":"chinese",
         "count":0,
-        "rating":4
+        "rating":4,
+        "keywords":["chicken","chinese","nonveg", "chilli chicken"]
     },
     {
         "title":"Dal Makhani",
@@ -58,7 +63,8 @@ export const cuisines=[
         "type":"veg",
         "category":"North Indian",
         "count":0,
-        "rating":4
+        "rating":4,
+        "keywords":["dal","dal makhani","north indian","punjabi","veg"]
     },
     {
         "title":"Paneer Curry",
@@ -68,7 +74,8 @@ export const cuisines=[
         "type":"veg",
         "category":"North Indian",
         "count":0,
-        "rating":3.5
+        "rating":3.5,
+        "keywords":["paneer curry","paneer","curry","north indian","veg"]
     },
     {
         "title":"Chicken Curry",
@@ -78,9 +85,9 @@ export const cuisines=[
         "type":"nonveg",
         "category":"North Indian",
         "count":0,
-        "rating":4.5
+        "rating":4.5,
+        "keywords":["chicken curry","chicken","curry","north indian","nonveg"]
     },
-// ]
     {
         "title":"Mutton Curry",
         "description":"",
@@ -89,7 +96,8 @@ export const cuisines=[
         "type":"nonveg",
         "category":"North Indian",
         "count":0,
-        "rating":3.5
+        "rating":3.5,
+        "keywords":["mutton curry","mutton","curry","north indian","nonveg"]
     },
     {
         "title":"Masala Dosa",
@@ -99,7 +107,8 @@ export const cuisines=[
         "type":"veg",
         "category":"South Indian",
         "count":0,
-        "rating":3.5
+        "rating":3.5,
+        "keywords":["masala dosa","dosa","south indian","veg"]
     },
     {
         "title":"Idli Sambhar",
@@ -109,7 +118,8 @@ export const cuisines=[
         "type":"veg",
         "category":"South Indian",
         "count":0,
-        "rating":3.5
+        "rating":3.5,
+        "keywords":["idli","south indian","veg"]
     },
     {
         "title":"Plain Dosa",
@@ -119,7 +129,8 @@ export const cuisines=[
         "type":"veg",
         "category":"South Indian",
         "count":0,
-        "rating":4.5
+        "rating":4.5,
+        "keywords":["dosa","south indian","veg"]
     },
 
     {
@@ -130,7 +141,8 @@ export const cuisines=[
         "type":"veg",
         "category":"rice",
         "count":0,
-        "rating":3
+        "rating":3,
+        "keywords":["rice","plain rice","veg"]
     },
     {
         "title":"Fried Rice",
@@ -140,7 +152,8 @@ export const cuisines=[
         "type":"veg",
         "category":"rice",
         "count":0,
-        "rating":4.5
+        "rating":4.5,
+        "keywords":["rice","fried rice","fried","chinese","veg"]
     },
 
     {
@@ -151,7 +164,19 @@ export const cuisines=[
         "type":"nonveg",
         "category":"rice",
         "count":0,
-        "rating":4
+        "rating":4,
+        "keywords":["chicken biryani","rice","chicken","biryani","nonveg"]
+    },
+    {
+        "title":"Mutton Biryani",
+        "description":"Best served hyderabadi biryani with a tasty gosht    .",
+        "price":350,
+        "photo":"chicken_biryani",
+        "type":"nonveg",
+        "category":"rice",
+        "count":0,
+        "rating":4,
+        "keywords":["mutton biryani","rice","mutton","biryani","nonveg"]
     },
 ]
 

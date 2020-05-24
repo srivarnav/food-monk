@@ -6,6 +6,7 @@ import Footer from '../components/UI/Footer/Footer';
 import Card from '../components/FoodList/FoodList';
 import Login from '../components/UI/Login/Login';
 import Container from '@material-ui/core/Container';
+import {isEmpty} from 'bellajs';
 
 import { cuisines } from '../data/cuisines';
 import CheckoutDialog from '../components/UI/Checkout/CheckoutDialog';
@@ -14,6 +15,7 @@ class Food extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            data:cuisines,
             cuisines,
             totalPrice: 0,
             purchasedItem: [],
@@ -70,6 +72,17 @@ class Food extends React.Component {
         this.setState({ showCheckoutModal: false });
     }
 
+    handleSearch= (event) =>{
+        const originalData = this.state.data;
+        let result = this.state.cuisines.filter(element=>(element.keywords).indexOf(event.target.value) > -1);
+        if(!isEmpty(result)){
+            this.setState({cuisines: result});
+        }
+        else{
+            this.setState({cuisines:originalData});
+        }
+    }
+
     render() {
         console.log(this.state)
         const { cuisines } = this.state;
@@ -79,7 +92,8 @@ class Food extends React.Component {
                     loginOpen={this.loginHandleOpen}
                     loginClose={this.loginHandleClose}
                     isAuthenticated={this.state.isAuthenticated}
-                    showLoginModal={this.state.showLoginModal} />
+                    showLoginModal={this.state.showLoginModal}
+                    handleSearch={this.handleSearch}/>
                 <Login
                     loginOpen={this.loginHandleOpen}
                     loginClose={this.loginHandleClose}

@@ -49,7 +49,7 @@ export default function AlertDialog(props) {
                         <Typography component="h1" variant="h5">
                             Log in
                         </Typography>
-                        <form className={classes.form} noValidate>
+                        <div className={classes.form} noValidate>
                             <TextField
                                 variant="outlined"
                                 margin="normal"
@@ -86,7 +86,7 @@ export default function AlertDialog(props) {
                             >
                                 Log In
                             </Button>
-                        </form>
+                        </div>
                     </div>
                 </DialogContent>
                 <DialogActions>

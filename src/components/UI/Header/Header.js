@@ -65,6 +65,10 @@ const useStyles = makeStyles((theme) => ({
 export default function ButtonAppBar(props) {
     const classes = useStyles();
 
+    let handleSearch = (event) =>{
+        props.handleSearch(event)
+    }
+
     return (
         <div className={classes.root} >
             <AppBar className={classes.header} position="fixed">
@@ -83,6 +87,7 @@ export default function ButtonAppBar(props) {
                                 input: classes.inputInput,
                             }}
                             inputProps={{ 'aria-label': 'search' }}
+                        onChange={handleSearch}
                         />
                     </div>
                     <Button color="inherit" onClick={props.loginOpen}><LockOpenIcon/></Button>

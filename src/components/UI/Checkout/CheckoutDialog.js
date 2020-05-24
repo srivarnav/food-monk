@@ -14,8 +14,6 @@ import Checkout from './Checkout';
 export default function ResponsiveDialog(props) {
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
-    console.log(props);
-
 
     return (
         <div>

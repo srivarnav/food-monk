@@ -103,9 +103,9 @@ export default function ButtonAppBar(props) {
                             </DialogContentText>
                         </DialogContent>
                         <DialogActions>
-                            <Button onClick={handleClose} style={{ color: '#4e004e' }}>
+                            {/* <Button onClick={handleClose} style={{ color: '#4e004e' }}>
                                 Cancel
-                            </Button>
+                            </Button> */}
                             <Button onClick={handleClose} style={{ color: '#4e004e' }} autoFocus>
                                 continue
                             </Button>

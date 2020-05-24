@@ -74,7 +74,9 @@ class Food extends React.Component {
 
     handleSearch= (event) =>{
         const originalData = this.state.data;
-        let result = this.state.cuisines.filter(element=>(element.keywords).indexOf(event.target.value) > -1);
+        let value = (event.target.value).toLowerCase();
+        console.log(value);
+        let result = this.state.cuisines.filter(element=>(element.keywords).indexOf(value) > -1);
         if(!isEmpty(result)){
             this.setState({cuisines: result});
         }
